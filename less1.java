@@ -1,3 +1,8 @@
+/**
+* Java. Level 1. Lesson 1
+*
+* @author Marina Sultanova  @nickname Маря (не Мария!!!)
+*/
 class Homework1 {
 	byte a1 = 120;
 	short b2 = 300;
