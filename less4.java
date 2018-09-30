@@ -2,8 +2,19 @@
 * Java. Level 1. Lesson 4
 *
 * @author Marina Sultanova 
-* @version dated Sep 24, 2018
+* @version dated Sep 30, 2018
 */
+
+/*
+    Napisala svoyu versiyu igry, ne zaglyadyvaya v metodichku. 
+    Spasibo, yesli reshite posmotret'.
+    Chto kasatel'no d\z. 
+    Proverka pobedy osushchestvlyayetsya 3mya metodami:
+    1 checkWinV()
+    2 checkWinH()
+    3 checkWinD()
+    Logika, proverka pobedy sdelana s ispol'zovaniyem tsiklov i universal'na dlya lyubogo razmera polya.
+ */
 import java.util.Scanner;
 import java.util.Random; // Vspominaya proshluyu nedorabotku v Domashke(nomer 3). v etot raz ispol'zuyu Random
 
