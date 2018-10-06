@@ -12,16 +12,30 @@ public class less6 {
         Cat cat = new Cat();
         Scanner sc = new Scanner(System.in);
         System.out.println(cat.run(sc.nextInt()));
+        
         /*System.out.println(cat.jump());
         System.out.println(cat.swim());*/
     }
+    
+
 }
+
+
 
 class Animals{
     protected String a = " animal";
-    public String run(int r) {
-        return (a + " to run " + r + " distance");
+    protected int limit_run, limit_swim;
+    protected double limit_jump;
+    
+    public boolean run(int r) {
+        if (r < limit_run) {
+            System.out.println(a + " to run " + r + " distance"); 
+            return true;
+        } else {
+            return false;
+        }
     }
+    
     public String swim(int r){
         return (a + " to swim " + r + " distance");
     }
@@ -34,6 +48,9 @@ class Animals{
 class Cat extends Animals{
    public Cat(){
        a = "cat"; 
+       limit_run = 200;
+       limit_jump = 2;
+       limit_swim = 0;
    }
 
 }
@@ -41,5 +58,8 @@ class Cat extends Animals{
 class Dog extends Animals{
    public Dog(){
        a = "dog"; 
+       limit_run = 500;
+       limit_jump = 0.5;
+       limit_swim = 10;
    }
 }
