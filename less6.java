@@ -10,11 +10,15 @@ import java.util.Scanner;
 public class less6 {
     public static void main(String[] args) {
         Cat cat = new Cat();
+        Dog dog = new Dog();
         Scanner sc = new Scanner(System.in);
         System.out.println(cat.run(sc.nextInt()));
-        
-        /*System.out.println(cat.jump());
-        System.out.println(cat.swim());*/
+        System.out.println(cat.swim(sc.nextInt()));
+        System.out.println(cat.jump(sc.nextInt()));
+        System.out.println();
+        System.out.println(dog.run(sc.nextInt()));
+        System.out.println(dog.swim(sc.nextInt()));
+        System.out.println(dog.jump(sc.nextDouble()));
     }
     
 
@@ -25,23 +29,33 @@ public class less6 {
 class Animals{
     protected String a = " animal";
     protected int limit_run, limit_swim;
-    protected double limit_jump;
+    protected int limit_jump;
+    protected String run = " to run: ";
+    protected String swim = " to swim: ";
+    protected String jump = " to jump: ";
     
-    public boolean run(int r) {
-        if (r < limit_run) {
-            System.out.println(a + " to run " + r + " distance"); 
+    public boolean check(int input, int limit){
+        if (input <= limit) {
+            System.out.println(input + " distance"); 
             return true;
-        } else {
+        } else {            
             return false;
         }
     }
     
-    public String swim(int r){
-        return (a + " to swim " + r + " distance");
+    public boolean run(int r) {
+        System.out.println(a + run);
+        return check(r,limit_run);
+    }
+
+    public boolean swim(int r){
+        System.out.println(a + swim);
+        return check(r,limit_swim);
     }
     
-    public String jump(int r){
-        return (a + " to jump " + r + " distance");
+    public boolean jump(int r){
+        System.out.println(a + jump);
+        return check(r,limit_jump);
     }
 }
 
@@ -59,7 +73,16 @@ class Dog extends Animals{
    public Dog(){
        a = "dog"; 
        limit_run = 500;
-       limit_jump = 0.5;
+       double limit_jump = 0.5;
        limit_swim = 10;
+   }
+   
+   public boolean jump(double r){
+        if (r <= limit_jump) {
+            System.out.println(r + " distance"); 
+            return true;
+        } else {            
+            return false;
+        }
    }
 }
