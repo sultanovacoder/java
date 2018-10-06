@@ -13,26 +13,22 @@ public class less6 {
         Dog dog = new Dog();
         Scanner sc = new Scanner(System.in);
         System.out.println(cat.run(sc.nextInt()));
-        System.out.println(cat.swim(sc.nextInt()));
+        System.out.println(cat.swim());
         System.out.println(cat.jump(sc.nextInt()));
         System.out.println();
         System.out.println(dog.run(sc.nextInt()));
         System.out.println(dog.swim(sc.nextInt()));
         System.out.println(dog.jump(sc.nextDouble()));
     }
-    
-
 }
 
-
-
-class Animals{
+abstract class Animals{
     protected String a = " animal";
     protected int limit_run, limit_swim;
     protected int limit_jump;
-    protected String run = " to run: ";
-    protected String swim = " to swim: ";
-    protected String jump = " to jump: ";
+    protected final String RUN = " to run: ";
+    protected final String SWIM = " to swim: ";
+    protected final String JUMP = " to jump: ";
     
     public boolean check(int input, int limit){
         if (input <= limit) {
@@ -44,17 +40,17 @@ class Animals{
     }
     
     public boolean run(int r) {
-        System.out.println(a + run);
+        System.out.println(a + RUN);
         return check(r,limit_run);
     }
 
     public boolean swim(int r){
-        System.out.println(a + swim);
+        System.out.println(a + SWIM);
         return check(r,limit_swim);
     }
     
     public boolean jump(int r){
-        System.out.println(a + jump);
+        System.out.println(a + JUMP);
         return check(r,limit_jump);
     }
 }
@@ -64,7 +60,11 @@ class Cat extends Animals{
        a = "cat"; 
        limit_run = 200;
        limit_jump = 2;
-       limit_swim = 0;
+   }
+   
+   public boolean swim(){
+       System.out.println(a + SWIM);
+       return false;
    }
 
 }
