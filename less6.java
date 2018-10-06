@@ -9,23 +9,28 @@
 
 public class less6 {
     public static void main(String[] args) {
-        System.out.println(Animals.runAnimals());
-        System.out.println(Cat.runAnimals());
+        Cat cat = new Cat();
+        System.out.println(cat.runAnimals());
     }
 }
 
 class Animals{
-    static String a = " animal";
-    public static String runAnimals() {
-        return (a + "run");
+    protected String a = " animal";
+    public String runAnimals() {
+        return (a + " run");
     }
     
 }
 
 class Cat extends Animals{
-    //static String a = " cat"; неправильно
+   public Cat(){
+       a = "cat"; 
+   }
+
 }
 
 class Dog extends Animals{
-    
+   public Dog(){
+       a = "dog"; 
+   }
 }
