@@ -2,7 +2,7 @@
 * Java. Level 1. Lesson 6
 *
 * @author Marina Sultanova 
-* @version dated Oct 07, 2018
+* @version dated Oct 08, 2018
 */
 
 import java.util.Scanner;
@@ -12,25 +12,27 @@ public class less6 {
         Cat cat = new Cat();
         Dog dog = new Dog();
         Scanner sc = new Scanner(System.in);
-        System.out.println(cat.run(sc.nextInt()));
-        System.out.println(cat.swim());
-        System.out.println(cat.jump(sc.nextInt()));
+        System.out.println("info o cat");
+        System.out.println(cat.run(sc.nextFloat()));
+        System.out.println(cat.swim(sc.nextFloat()));
+        System.out.println(cat.jump(sc.nextFloat()));
         System.out.println();
-        System.out.println(dog.run(sc.nextInt()));
-        System.out.println(dog.swim(sc.nextInt()));
-        System.out.println(dog.jump(sc.nextDouble()));
+        System.out.println("info o dog");
+        System.out.println(dog.run(sc.nextFloat()));
+        System.out.println(dog.swim(sc.nextFloat()));
+        System.out.println(dog.jump(sc.nextFloat()));
     }
 }
 
 abstract class Animals{
     protected String a = " animal";
-    protected int limit_run, limit_swim;
-    protected int limit_jump;
+    protected float limit_run, limit_swim;
+    protected float limit_jump;
     protected final String RUN = " to run: ";
     protected final String SWIM = " to swim: ";
     protected final String JUMP = " to jump: ";
     
-    public boolean check(int input, int limit){
+    public boolean check(float input, float limit){
         if (input <= limit) {
             System.out.println(input + " distance"); 
             return true;
@@ -39,18 +41,18 @@ abstract class Animals{
         }
     }
     
-    public boolean run(int r) {
+    public boolean run(float r) {
         System.out.println(a + RUN);
         return check(r,limit_run);
     }
 
-    public boolean swim(int r){
+    public boolean swim(float r){
         System.out.println(a + SWIM);
         return check(r,limit_swim);
     }
     
-    public boolean jump(int r){
-        System.out.println(a + JUMP);
+    public boolean jump(float r){
+        System.out.println(a + JUMP + "float");
         return check(r,limit_jump);
     }
 }
@@ -62,10 +64,12 @@ class Cat extends Animals{
        limit_jump = 2;
    }
    
-   public boolean swim(){
+   @Override
+   public boolean swim(float r){
        System.out.println(a + SWIM);
        return false;
    }
+   
 
 }
 
@@ -73,16 +77,7 @@ class Dog extends Animals{
    public Dog(){
        a = "dog"; 
        limit_run = 500;
-       double limit_jump = 0.5;
        limit_swim = 10;
-   }
-   
-   public boolean jump(double r){
-        if (r <= limit_jump) {
-            System.out.println(r + " distance"); 
-            return true;
-        } else {            
-            return false;
-        }
+       limit_jump = (float) 0.5;
    }
 }
