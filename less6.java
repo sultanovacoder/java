@@ -10,7 +10,8 @@ import java.util.Scanner;
 public class less6 {
     public static void main(String[] args) {
         Cat cat = new Cat();
-        Dog dog = new Dog();
+        Dog dog = new Dog(20);
+        Dog dog2 = new Dog(150);
         Scanner sc = new Scanner(System.in);
         System.out.println("info o cat");
         System.out.println(cat.run(sc.nextFloat()));
@@ -18,7 +19,8 @@ public class less6 {
         System.out.println(cat.jump(sc.nextFloat()));
         System.out.println();
         System.out.println("info o dog");
-        System.out.println(dog.run(sc.nextFloat()));
+        System.out.println(dog.run(sc.nextFloat())); //1 dog
+        System.out.println(dog2.run(sc.nextFloat())); //2 dog
         System.out.println(dog.swim(sc.nextFloat()));
         System.out.println(dog.jump(sc.nextFloat()));
     }
@@ -74,9 +76,9 @@ class Cat extends Animals{
 }
 
 class Dog extends Animals{
-   public Dog(){
+   public Dog(int x){
        a = "dog"; 
-       limit_run = 500;
+       limit_run = x;
        limit_swim = 10;
        limit_jump = (float) 0.5;
    }
