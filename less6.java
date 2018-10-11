@@ -7,7 +7,7 @@
 
 import java.util.Scanner;
 
-public class less6 {
+public class Less6 {
     public static void main(String[] args) {
         Cat cat = new Cat();
         Dog dog = new Dog(20);

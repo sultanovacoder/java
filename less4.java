@@ -18,7 +18,7 @@
 import java.util.Scanner;
 import java.util.Random; // Vspominaya proshluyu nedorabotku v Domashke(nomer 3). v etot raz ispol'zuyu Random
 
-public class less4 {
+public class Less4 {
     int k = 0; //количество ходов человека
     static char[][] table = new char[3][3];
     static boolean[][] memory = new boolean[3][3];

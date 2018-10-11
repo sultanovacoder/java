@@ -5,7 +5,7 @@
 * @version dated Sep 26, 2018
 */
 
-public class less5 {
+public class Less5 {
     public static void main(String[] args){
         Cooperator[] mass = new Cooperator[5];
         mass[0] = new Cooperator("Lenka", "secretar", "lenka.secretar@mail.ru", "79214562801", 30000, 62);
