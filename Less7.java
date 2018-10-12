@@ -7,13 +7,13 @@
 
 public class Less7{
     public static void main(String[] args){
-         Cat cat = new Cat(4);
-         Plate plate = new Plate(5);
+         Cat cat = new Cat(12);
+         Plate plate = new Plate(10);
          System.out.println("koty nyghno s'est " + cat.fill);
          System.out.println("sejchas edi v tarelke " + plate.volume);
          cat.eat(plate);
          System.out.println("kolichestvo edi v tarelkre posle togo kak poel kot " + plate.volume);
-         //System.out.println("dly togo chtob naests'a koty nyghno eshe " + cat.fill + " porcij");
+         System.out.println("dly togo chtob naests'a koty nyghno eshe " + cat.fill + " porcij");
         // System.out.println(plate);         
     }
 }
@@ -28,7 +28,7 @@ class Cat {
     }
     
     public void eat(Plate plate){
-        plate.minysEdiIzTarelki(fill);
+        plate.minysEdiIzTarelki(this);
         //this.fill = this.fill - plate.volume;
     }
     
@@ -43,8 +43,15 @@ class Plate{
         this.volume = x; //здесь же this не нужно?!
     }
     
-    public void minysEdiIzTarelki(int fill) {
-        this.volume = this.volume - fill;
+    public void minysEdiIzTarelki(Cat cat) {
+        if (cat.fill >= this.volume) {
+            cat.fill = cat.fill - this.volume;
+            this.volume = 0;
+            
+        } else {
+            this.volume = this.volume - cat.fill;
+            cat.fill = 0;
+        }
     }
     
 }
