@@ -3,7 +3,7 @@
 *
 * @author Marina Sultanova  @nickname Маря (не Мария!!!)
 */
-class Homework1 {
+class Less1 {
 	byte a1 = 120;
 	short b2 = 300;
 	boolean c3 = true;

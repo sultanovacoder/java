@@ -6,7 +6,7 @@
 */
 
 import java.util.Scanner;
-public class less3 {
+public class Less3 {
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		System.out.println("1 ili 2 igra? vvedite number");

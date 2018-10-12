@@ -5,7 +5,7 @@
 * @version dated Sep 19, 2018
 */
 
-public class less2 {
+public class Less2 {
 	public static void main(String[] args) {
 		makeRev(30);
 		System.out.printf("%n %n");
