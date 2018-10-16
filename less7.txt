@@ -1,0 +1,7 @@
+Tigrenia,10
+Barsik,2
+Gnom,5
+Shnyrok,3
+Mikki,3
+Lalala,5
+Hyamba,10
