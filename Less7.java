@@ -9,12 +9,14 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.lang.Integer;
 
 public class Less7{
     public static void main(String[] args){
          File file = new File("less7.txt");
          ArrayList<Cat> catslist = new ArrayList<Cat>();
          Scanner sc2;
+         Cat[] cats;
          try {
              sc2 = new Scanner(file);
              while (sc2.hasNextLine()) {
@@ -22,26 +24,23 @@ public class Less7{
                  int pos = line.indexOf(',');
                  if (pos != -1) {
                      String name = line.substring(0,pos);
-                     String fill = line.substring(pos+1);
-                     System.out.println(name + " " + fill);
+                     int fill = Integer.parseInt(line.substring(pos+1));
+                     catslist.add(new Cat(name, fill));
+                     //System.out.println(name + " " + fill);
                  } 
              }
-             return;
-             /*Cat[] cats = new Cat[5];
-             cats[0] = new Cat("Tigrenia",10);
-             cats[1] = new Cat("Barsik",2);         
-             cats[2] = new Cat("Gnom",5);
-             cats[3] = new Cat("Shnyrok",3);
-             cats[4] = new Cat("Mikki",3);*/      
+             cats = catslist.toArray(new Cat[catslist.size()]);  
          }
          catch(FileNotFoundException e) {
+             cats = new Cat[0];
              e.printStackTrace();
          }
          finally {
              //sc2.close();
          }
-         /*Plate plate = new Plate(12);
+         Plate plate = new Plate(12);
          Scanner sc = new Scanner(System.in);
+         
          for (Cat cat:cats) {
             System.out.println(cat.name + " koty nyghno s'est " + cat.fill);
             System.out.println("sejchas edi v tarelke " + plate.volume);
@@ -57,7 +56,7 @@ public class Less7{
          }
          for (Cat cat:cats){
              System.out.println(cat.name + " " + cat.fill);
-         }  */
+         }  
     }
 }
 
